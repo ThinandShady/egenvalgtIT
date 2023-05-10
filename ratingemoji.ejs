@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Emoji Rating</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rate {
+            text-align: center;
+            width: 80%;
+            height: 40%;
+            margin: auto;
+        }
+
+        .emoji {
+            font-size: 8em;
+            height: 80%;
+            line-height: 1;
+        }
+
+        input {
+            width: 80%;
+            margin-top: 20px;
+            cursor: ew-resize;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hva rater du timen?</h1>
+    <div class="rate">
+        <div class="emoji">😑</div>
+        <input type="range" min="0" max="2" step="1">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let emojis = ['😠','😑','😍'];
+            $("input").mousemove(function(){
+                let i = $(this).val();
+                $(".emoji").html(emojis[i]);
+            });
+        });
+    </script>
+</body>
+</html>
