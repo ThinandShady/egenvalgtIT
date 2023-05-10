@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>QR Code Generator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+        * {
+            font-family: Montserrat;
+        }
+
+        .card {
+            margin: 0 auto;
+            /* Added */
+            float: none;
+            /* Added */
+            margin-bottom: 10px;
+            /* Added */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Main Container -->
+    <div class="container">
+        <br>
+        <h1 class="text-center">Time Rating</h1>
+        <hr>
+
+        <!-- Input card -->
+        <!-- row -->
+        <div class="row mb-3">
+
+            <!-- col.// -->
+            <aside class="col-sm-12 text-center">
+                <p>Her kan du få tilbakemeldig på ting!</p>
+
+                <div class="card">
+                    <article class="card-body">
+                        <h4 class="card-title text-center mb-4 mt-1">Lag formet her!</h4>
+                        <hr>
+                        <p>Generer!</p>
+                        <form action="/scan" method="POST">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-pencil"></i> </span>
+                                        <label for="myChoices">Velg en måte elevene skal bli vurdert på</label>
+                                        <select id="myChoices" name="myChoices">
+                                            <option value="choice-1">Terning (1-6)</option>
+                                            <option value="choice-2">Emoji (Blid - Middels - Sur)</option>
+                                            <option value="choice-3">Stjerner (1-10)</option>
+                                        </select>
+                                    </div>
+                                    <input name="url" class="form-control"
+                                        placeholder1="Skriv spørsmålet ditt til klassen her" type="text">
+                                </div>
+                                <!-- input-group.// -->
+                            </div>
+                            <!-- form-group// -->
+
+                            <!-- form-group// -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block" value="Get QR">Lag QR-koden og få respons</button>
+                            </div>
+                            <!-- form-group// -->
+                        </form>
+                    </article>
+                </div>
+                <!-- card.// -->
+
+            </aside>
+            <!-- col.// -->
+        </div>
+
+        <!-- row.// -->
+        <!--Image card end.//-->
+
+    </div>
+    <!--container end.//-->
+</body>
+
+</html>

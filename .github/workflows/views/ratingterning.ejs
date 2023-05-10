@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Terningvurderingssystem</title>
+	<style>
+		.terning {
+			display: inline-block;
+			font-size: 3em;
+			margin: 0.5em;
+			cursor: pointer;
+		}
+		
+		@media only screen and (max-width: 480px) {
+			.terning {
+				font-size: 2em;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="rating">
+		<div class="terning" data-value="1">&#9856;</div>
+		<div class="terning" data-value="2">&#9857;</div>
+		<div class="terning" data-value="3">&#9858;</div>
+		<div class="terning" data-value="4">&#9859;</div>
+		<div class="terning" data-value="5">&#9860;</div>
+		<div class="terning" data-value="6">&#9861;</div>
+	</div>
+
+	<script>
+		let terning = document.querySelectorAll(".terning");
+		let rating = 0;
+
+		function updateRating(value) {
+			rating = value;
+			for (let i = 0; i < terning.length; i++) {
+				if (i < value) {
+					terning[i].style.color = "gold";
+				} else {
+					terning[i].style.color = "black";
+				}
+			}
+		}
+
+		terning.forEach(function(terninger) {
+			terninger.addEventListener("touchend", function() {
+				let value = terninger.getAttribute("data-value");
+				updateRating(value);
+			});
+		});
+	</script>
+</body>
+</html>
